@@ -1,0 +1,94 @@
+.Header{
+    background: url('/wallpaper.png');
+    background-size: cover;
+    background-position: center center;
+    padding: 1.5em;
+    gap: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Header section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.store{
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    width: 2em;
+    height: 2em;
+}
+
+.title{
+    color: #fff;
+}
+
+.section_options{
+    display: flex;
+    justify-content: space-around
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.search i{
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.search input[type="text"]{
+    background-color: white;
+    color: #303030;
+    outline: none;
+    box-shadow: none;
+    border: 0 none;
+    padding: .4em .8em;
+    box-shadow: -1px -1px 3px black;
+}
+
+.search input::placeholder{
+    color: #303030;
+}
+
+.shopping{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.shopping i{
+    font-size: 1.5em;
+}
+
+.shopping .cicle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    font-size: .8em;
+    position: absolute;
+    top: -.9em;
+    left: -.9em;
+    padding: .1em;
+}
+
+.shopping .cicle p{
+  color: black;
+  font-weight: bold;
+}
+

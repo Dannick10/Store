@@ -1,0 +1,9 @@
+.section_product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding: .8em .3em;
+}
+
