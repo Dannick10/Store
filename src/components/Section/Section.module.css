@@ -8,3 +8,40 @@
     padding: .8em .3em;
 }
 
+
+.loading{
+    position: fixed;
+    font-size: 4em;
+    font-family: var(--font0);
+    letter-spacing: .1em;
+    animation: loading 1s infinite alternate;
+}
+
+.loading::after{
+    content: '';
+    animation: loadingPoint 1s infinite alternate;
+}
+
+@keyframes loading {
+    0%{
+        font-size: 3em;
+    }
+
+    100%{
+        font-size: 3.5em;
+    }
+}
+
+@keyframes loadingPoint {
+    0%{
+        content: '.';
+    }
+
+    50%{
+        content: '';
+    }
+
+    100%{
+        content: '.';
+    }
+}
