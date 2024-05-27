@@ -1,6 +1,6 @@
-import React, { useEffect, useState} from 'react'
+import React, { useCallback, useEffect, useMemo, useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { addProductstoCart, removeProductstoCart } from '../../redux/products/Action'
+import { addProductstoCart, decreaseProductstoCart, increaseProductstoCart, removeProductstoCart } from '../../redux/products/Action'
 
 import styles from './CardProducts.module.css'
 
@@ -16,6 +16,15 @@ const CardProducts = ({data,cart,setmenu}) => {
       dispatch(removeProductstoCart(data.id))
   }
 
+  const handleProductIncrease = (e) => {
+    e.stopPropagation();
+    dispatch(increaseProductstoCart(data.id));
+  }
+
+  const handleProductDecrease = (e) => {
+    e.stopPropagation();
+    dispatch(decreaseProductstoCart(data.id));
+  }
 
   return (
     <div className={styles.card} key={data.id} id={data.id}>
@@ -43,10 +52,10 @@ const CardProducts = ({data,cart,setmenu}) => {
           <button onClick={() => {handleProductClick()}} >Comprar</button>
          </div>
           </>: <>
-          <div className={styles.buy}>
-          <button style={data.quantity <= 1 ? {opacity: '0.8'}:{opacity: '1'}}>-</button>
+          <div className={styles.buy} onClick={handleProductDecrease}>
+          <button>-</button>
           <p>{data.quantity}</p>
-          <button>+</button>
+          <button onClick={handleProductIncrease}>+</button>
          </div>
           </>}
 

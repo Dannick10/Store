@@ -31,6 +31,19 @@ const productsReduce = (state = initialState, action) => {
                     ...state,
                     products: state.products.filter(products => products.id !== action.payload)
                 }
+            
+            case ProductsActionTypes.INCREASE_PRODUCT:
+                return{
+                    ...state,
+                    products: state.products.map(product => product.id === action.payload ? {...product, quantity: product.quantity +1} : product)
+                }
+            
+            case ProductsActionTypes.DECREASE_PRODUCT:
+                return{
+                    ...state,
+                    products: state.products.map(product => product.id === action.payload ? {...product, quantity: product.quantity - 1} : product ).filter((product) => product.quantity > 0)
+                }
+             
 
             default:
                 return state
