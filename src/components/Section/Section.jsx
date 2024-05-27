@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './Section.module.css'
 import CardProducts from '../CardProducts/CardProducts'
 
-const Section = ({setquery}) => {
+const Section = ({setquery,setmenu}) => {
 
     const [query,Setquery] = useState('iphone')
     const [products,Setproducts] = useState()
@@ -28,7 +28,7 @@ const Section = ({setquery}) => {
 
   return (
     <section className={styles.section_product}>
-        {products && products.map((e) => (<><CardProducts data={e}/></>))}
+        {products && products.map((e) => (<><CardProducts data={e} setmenu={setmenu}/></>))}
      
     </section>
   )

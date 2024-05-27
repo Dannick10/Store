@@ -36,6 +36,12 @@
     text-decoration: line-through;
 }
 
+.buy{
+    display: flex;
+    align-items: center;
+    gap: .4em;
+}
+
 .buy button{
     border: none;
     padding: .7em 2em;
@@ -44,6 +50,7 @@
     font-family: var(--font0);
     background-color: #101010;
     color: #fff;
+
 }
 
 .buy button:hover{

@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 
 import store from '/store.svg'
 
-const Header = ({getquery}) => {
+const Header = ({getquery,getmenu, setmenu}) => {
 
   const [query,Setquery] = useState('')
 
@@ -36,7 +36,7 @@ const Header = ({getquery}) => {
 
               <aside className={styles.shopping}>
                 <div className={styles.cicle}><p>0</p></div>
-                <i className="fa-solid fa-cart-shopping"></i>
+                <i className="fa-solid fa-cart-shopping" onClick={()=>{setmenu(true)}}></i>
               </aside>
     </header>
   )
