@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { addProductstoCart } from '../../redux/products/Action'
+import { addProductstoCart, removeProductstoCart } from '../../redux/products/Action'
 
 import styles from './CardProducts.module.css'
 
@@ -12,11 +12,15 @@ const CardProducts = ({data,cart,setmenu}) => {
       dispatch(addProductstoCart(data))
   }
 
+  const handleProductRemove = () => {
+      dispatch(removeProductstoCart(data.id))
+  }
+
 
   return (
     <div className={styles.card} key={data.id} id={data.id}>
           {cart && <>
-            <i className="fa-solid fa-xmark" style={{position:'absolute', left: '.6em',fontSize:'1.3em', cursor: 'pointer'}}></i>
+            <i className="fa-solid fa-xmark" style={{position:'absolute', left: '.6em',fontSize:'1.3em', cursor: 'pointer'}} onClick={handleProductRemove}></i>
             </>}
           <div className={styles.site}><a href={data.permalink} target='_blank'><i className="fa-solid fa-store"></i></a></div>
 
@@ -36,12 +40,12 @@ const CardProducts = ({data,cart,setmenu}) => {
 
           {!cart ? <>
          <div className={styles.buy}>
-          <button onClick={() => {handleProductClick(),setmenu(true)}} >Comprar</button>
+          <button onClick={() => {handleProductClick()}} >Comprar</button>
          </div>
           </>: <>
           <div className={styles.buy}>
-          <button>-</button>
-          <p>1</p>
+          <button style={data.quantity <= 1 ? {opacity: '0.8'}:{opacity: '1'}}>-</button>
+          <p>{data.quantity}</p>
           <button>+</button>
          </div>
           </>}

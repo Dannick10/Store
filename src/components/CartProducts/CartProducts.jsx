@@ -7,8 +7,10 @@ import styles from './CartProducts.module.css'
 
 const CartProducts = ({menu,setmenu}) => {
 
+
+
   const { products } = useSelector((rootReducer) => rootReducer.productsReduce)
-  console.log(products)
+
   return (
     <div className={styles.menu} style={menu ? {visibility: 'visible'}: {visibility: 'hidden'}}>
         <p style={{position: 'absolute', top: '1em', fontFamily: 'var(--font0)'}}>Seu carrinho</p>

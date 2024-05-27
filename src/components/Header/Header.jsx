@@ -1,9 +1,19 @@
-import React, {useState} from 'react'
+import React, {useMemo, useState} from 'react'
 import styles from './Header.module.css'
 
 import store from '/store.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import rootReducer from '../../redux/root-reducer'
 
 const Header = ({getquery,getmenu, setmenu}) => {
+
+  const { products } = useSelector((rootReducer) => rootReducer.productsReduce)
+
+  const dispatch = useDispatch()
+
+  const useProductCount = useMemo(() => {
+    return products.reduce((acc,curr) => acc + curr.quantity, 0)
+  },[products])
 
   const [query,Setquery] = useState('')
 
@@ -35,7 +45,7 @@ const Header = ({getquery,getmenu, setmenu}) => {
          </section>
 
               <aside className={styles.shopping}>
-                <div className={styles.cicle}><p>0</p></div>
+                <div className={styles.cicle}><p>{useProductCount}</p></div>
                 <i className="fa-solid fa-cart-shopping" onClick={()=>{setmenu(true)}}></i>
               </aside>
     </header>

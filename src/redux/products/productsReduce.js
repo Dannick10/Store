@@ -26,6 +26,12 @@ const productsReduce = (state = initialState, action) => {
                 products: [...state.products, { ...action.payload, quantity: 1}]
             }
 
+            case ProductsActionTypes.REMOVE_PRODUCT:
+                return{
+                    ...state,
+                    products: state.products.filter(products => products.id !== action.payload)
+                }
+
             default:
                 return state
     }   
