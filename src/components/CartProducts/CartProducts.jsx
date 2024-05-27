@@ -15,6 +15,7 @@ const CartProducts = ({menu,setmenu}) => {
       currency: currency
     }).format(value);
   }
+
   const { products } = useSelector((rootReducer) => rootReducer.productsReduce)
 
   const Productstotalprice = useSelector(SelectProductsTotalPrice)
@@ -31,7 +32,7 @@ const CartProducts = ({menu,setmenu}) => {
         {products.map(products => <div className={styles.product}><CardProducts data={products} cart={true}/></div>)}
         </div>
 
-        <h3 className={styles.total}><span>Total:</span> {formatCurrency(Productstotalprice)} R$</h3>
+        <h3 className={styles.total}><span>Total:</span> {formatCurrency(Productstotalprice)}</h3>
 
         <div className={styles.button}>
           <button>Finalizar compra</button>

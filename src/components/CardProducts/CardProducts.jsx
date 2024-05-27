@@ -5,6 +5,13 @@ import { addProductstoCart, decreaseProductstoCart, increaseProductstoCart, remo
 import styles from './CardProducts.module.css'
 
 const CardProducts = ({data,cart,setmenu}) => {
+
+  const formatCurrency = (value, locale = 'pt-BR', currency = 'BRL') => {
+    return new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: currency
+    }).format(value);
+  }
   
   const dispatch = useDispatch()
 
@@ -41,10 +48,10 @@ const CardProducts = ({data,cart,setmenu}) => {
          </div>
          <div className={styles.info}>
             {!cart && <>
-            {data.original_price == null ? (<p>A partir</p>):(<p className={styles.originalprice}>{data.original_price} R$</p>)}
+            {data.original_price == null ? (<p>A partir</p>):(<p className={styles.originalprice}>{formatCurrency(data.original_price)}</p>)}
             </>}
 
-            <p className={styles.price}>{data.price} R$</p>
+            <p className={styles.price}>{formatCurrency(data.price)}</p>
          </div>
 
           {!cart ? <>
