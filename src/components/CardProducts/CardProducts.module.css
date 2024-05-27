@@ -9,6 +9,7 @@
     padding: .8em;
     font-family: var(--font0);
     gap: 1em;
+    border-radius: .4em;
 }
 
 .card:hover{

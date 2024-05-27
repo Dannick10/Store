@@ -35,7 +35,7 @@ const Header = ({getquery}) => {
          </section>
 
               <aside className={styles.shopping}>
-                <div className={styles.cicle}><p>1</p></div>
+                <div className={styles.cicle}><p>0</p></div>
                 <i className="fa-solid fa-cart-shopping"></i>
               </aside>
     </header>
