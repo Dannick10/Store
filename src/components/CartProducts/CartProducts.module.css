@@ -45,3 +45,12 @@
 .button button:hover{
     filter: brightness(120%);
 }
+
+.total{
+    font-family: var(--font0);
+    color: #615c5c;
+}
+
+.total span {
+    color: black;
+}

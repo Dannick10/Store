@@ -4,16 +4,15 @@ import styles from './Header.module.css'
 import store from '/store.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import rootReducer from '../../redux/root-reducer'
+import { selectProductsCount } from '../../redux/products/cart.selection'
 
 const Header = ({getquery,getmenu, setmenu}) => {
 
   const { products } = useSelector((rootReducer) => rootReducer.productsReduce)
-
+  
   const dispatch = useDispatch()
 
-  const useProductCount = useMemo(() => {
-    return products.reduce((acc,curr) => acc + curr.quantity, 0)
-  },[products])
+  const productsCount = useSelector(selectProductsCount)
 
   const [query,Setquery] = useState('')
 
@@ -45,7 +44,7 @@ const Header = ({getquery,getmenu, setmenu}) => {
          </section>
 
               <aside className={styles.shopping}>
-                <div className={styles.cicle}><p>{useProductCount}</p></div>
+                <div className={styles.cicle}><p>{productsCount}</p></div>
                 <i className="fa-solid fa-cart-shopping" onClick={()=>{setmenu(true)}}></i>
               </aside>
     </header>
