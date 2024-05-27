@@ -1,12 +1,22 @@
-<<<<<<< HEAD
-# Store
-=======
-# React + Vite
+## Sobre o Projeto:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+StoreRedux é um projeto de e-commerce construído usando tecnologias web modernas, incluindo HTML, CSS, JavaScript, React & vite, a API do Mercado Livre e Redux. Ele é projetado para demonstrar conceitos fundamentais e práticos em desenvolvimento web, como manipulação de dados, gerenciamento de estado e integração de APIs externas.
 
-Currently, two official plugins are available:
+## funcionalidades:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
->>>>>>> bebfd67 (projeto)
+pesquisar por mercado existentes no mercado livre e ir até a pagina do produto real.
+adicionar itens no carrinho.
+diminuir e aumentar número de items.
+remover produtos do carrinho. 
+ver o valor total dos seus produtos. 
+
+## Instalação e Uso
+
+1. Clone este repositório: `git clone https://github.com/seuusario/Store.git`
+2. Instale as dependências: `npm install`
+3. Inicie o servidor de desenvolvimento: `npm run dev`
+4. Acesse o aplicativo em seu navegador: `http://localhost:3000`
+
+##Licença
+
+Este projeto está licenciado sob a MIT License.
