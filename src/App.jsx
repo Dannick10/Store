@@ -16,6 +16,7 @@ function App() {
     <Header getquery={Setquery} getMenu={menu} setmenu={SetMenu}/>
     <Section setquery={query} setmenu={SetMenu}/>
     <CartProducts menu={menu} setmenu={SetMenu}/>
+  
     </>
   )
 }
